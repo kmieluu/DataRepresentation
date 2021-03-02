@@ -1,6 +1,6 @@
 # DataRepresentation
 Data Representation Project
-G00376566
+G00376566_
 Agata Chmielowiec
 
 This project has been carried out as an assignment of the Data Representation module of the Higher Diploma In Data Analytics at GMIT.
@@ -22,9 +22,9 @@ I got an account on pythonanywhere to run the code, please see credentials below
 
 login: kmieluu
 Pythonanywhere password: YP3L4RKf6aKN7UW
-
+**
 **3. Dogs database HTML viewer -code visible in file called "dogsviewer.html" **
 
 
 
-**4. Python DAO programme to access mySql database **
+**4. Python DAO programme to access mySql database ****
