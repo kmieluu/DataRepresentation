@@ -9,7 +9,7 @@ db=mysql.connector.connect(
 )
 
 cursor = db.cursor()
-sql = 'CREATE TABLE dogs (IKCReg varchar(5), RegNu int PRIMARY KEY, age  int, breed varchar(250), price int)'
+sql = 'CREATE TABLE test2 (IKCReg varchar(5), RegNu int PRIMARY KEY, age  int, breed varchar(250), price int)'
 
 cursor.execute(sql)
 
