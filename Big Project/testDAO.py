@@ -1,4 +1,4 @@
-from dogsDao import dogsDao
+from dogsDao import DogsDao
 
 dogs = {
     'IKCReg':"Yes",
