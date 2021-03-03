@@ -31,7 +31,7 @@ class dogsDao:
 
     def getAll(self):
         cursor = self.db.cursor()
-        sql = 'select * from stock'
+        sql = 'select * from dogs'
         cursor.execute(sql)
         results = cursor.fetchall()
         returnArray = []
@@ -44,42 +44,35 @@ class dogsDao:
 
     def findByID(self, id):
         cursor = self.db.cursor()
-        sql = 'select * from stock where id = %s'
+        sql = 'select * from dogs where id = %s'
         values = [ id ]
         cursor.execute(sql, values)
         result = cursor.fetchone()
         return self.convertToDict(result)
 
 
-    def update(self, stock):
+    def update(self, dogs):
         cursor = self.db.cursor()
-        sql = "update stock set product = %s, quantity = %s, price = %s where id = %s"
+        sql = "update dogs set product = %s, quantity = %s, price = %s where id = %s"
         values = [    
-            stock['product'],
-            stock['quantity'],
-            stock['price'],
-            stock['id']
+            dogs['IKCReg'],
+            dogs['RegNum'],
+            dogs['age'],
+            dogs['breed'],
+            dogs['price'],
+            dogs['id']
+            
         ]
         cursor.execute(sql, values)
         self.db.commit()
-        return stock   
+        return dogs   
     
     def delete(self, id):
         cursor = self.db.cursor()
-        sql = 'delete * from stock where id = %s'
+        sql = 'delete * from dogs where id = %s'
         values = [id]
         cursor.execute(sql,values)
         return {}
 
-    # function to convert result to dict
-    def convertToDict(self, result):
-        colnames = ['id','product','quantity','price']
-        stock = {}
 
-        if result:
-            for i , colName in enumerate(colnames):
-                value = result[i]
-                stock[colName] = value
-        return stock
-
-stockDao = StockDao()
+dogsDao = DogsDao()
