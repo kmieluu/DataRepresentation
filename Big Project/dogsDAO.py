@@ -37,9 +37,9 @@ class DogsDao:
         returnArray = []
         print(results)
         for result in results:
-            resultAsDict = self.convertToDict(result)
-            #put dict object in the array
-            returnArray.append(resultAsDict)
+            print(result)
+            returnArray.append(self.convertToDictionary(result))
+        cursor.close()
         return returnArray
 
     def findByID(self, id):
@@ -73,6 +73,5 @@ class DogsDao:
         values = [id]
         cursor.execute(sql,values)
         return {}
-
 
 dogsDao = DogsDao()
