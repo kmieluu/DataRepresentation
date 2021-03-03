@@ -1,6 +1,6 @@
 import mysql.connector
 
-class dogsDao:
+class DogsDao:
     db=""
     def __init__(self):
         self.db = mysql.connector.connect(
