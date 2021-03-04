@@ -1,14 +1,12 @@
-from dogsDao import DogsDao
-
-dogs = {
-    'IKCReg':"Yes",
-    'RegNum':123,
-    'Age':12,
-    'breed':"vizsla",
-    'price':123,
-    'ID':1,
+from dogsDAO import dogsDao as dogsDao
     
+dogs = {
+    'IKCReg':"yes",
+    'RegNum': 1,
+    'age':12,
+    'breed':'vizsla',
+    'price':100
 }
 
-returnvalue = dogsDao.create(dogs)
-print(returnvalue)
+returnValue = dogsDao.getAll()
+print(returnValue)
