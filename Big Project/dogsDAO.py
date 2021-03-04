@@ -37,10 +37,21 @@ class DogsDao:
         returnArray = []
         print(results)
         for result in results:
-            print(result)
-            returnArray.append(self.convertToDictionary(result))
-        cursor.close()
+            resultAsDict = self.convertToDict(result)
+            returnArray.append(resultAsDict)
+        
         return returnArray
+    
+    def convertToDict(self, result):
+        colnames = ['IKCReg', 'RegNum','age', 'breed', 'price', 'id']
+        dogs = {}
+
+        if result:
+            for i, colName in enumerate(colnames):
+                value = result [0]
+                dogs[colName] = value
+            return dogs
+
 
     def findByID(self, id):
         cursor = self.db.cursor()
